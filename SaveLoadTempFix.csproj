@@ -31,6 +31,20 @@
     <Reference Include="Assembly-CSharp" HintPath="$(StationeersDllDir)/Assembly-CSharp.dll" Private="false" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <DistDir>$(MSBuildProjectDirectory)/dist</DistDir>
+  </PropertyGroup>
+
+  <!-- The mod's layout, dist/SaveLoadTempFix/{SaveLoadTempFix.dll, About/}: a StationeersLaunchPad mod. -->
+  <Target Name="Dist" DependsOnTargets="Build">
+    <ItemGroup>
+      <AboutFiles Include="About/**/*" />
+    </ItemGroup>
+    <RemoveDir Directories="$(DistDir)/SaveLoadTempFix" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DistDir)/SaveLoadTempFix" />
+    <Copy SourceFiles="@(AboutFiles)" DestinationFolder="$(DistDir)/SaveLoadTempFix/About/%(RecursiveDir)" />
+  </Target>
+
   <Target Name="CheckGameDlls" BeforeTargets="ResolveAssemblyReferences">
     <Error
       Condition="!Exists('$(StationeersDllDir)/Assembly-CSharp.dll')"

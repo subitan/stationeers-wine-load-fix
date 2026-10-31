@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1232" height="706" viewBox="0 0 1232 706">
+  <!-- An original drawing: a save file's folder, kept from failing to load. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d2733"/>
+      <stop offset="1" stop-color="#0e141b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1232" height="706" fill="url(#bg)"/>
+  <g transform="translate(616 300)">
+    <path d="M-230 -130 h150 l40 40 h270 a20 20 0 0 1 20 20 v240 a20 20 0 0 1 -20 20 h-460 a20 20 0 0 1 -20 -20 v-280 a20 20 0 0 1 20 -20 z"
+          fill="#e8a33d" stroke="#f6c46e" stroke-width="6"/>
+    <path d="M-250 -60 h500 v230 a20 20 0 0 1 -20 20 h-460 a20 20 0 0 1 -20 -20 z" fill="#f2b552"/>
+    <circle cx="150" cy="120" r="92" fill="#2f9e5b" stroke="#0e141b" stroke-width="12"/>
+    <path d="M100 122 l34 34 l70 -76" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="616" y="600" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Save-load temp folder fix</text>
+  <text x="616" y="660" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="34" fill="#9fb3c8">Saves keep loading under CrossOver</text>
+</svg>

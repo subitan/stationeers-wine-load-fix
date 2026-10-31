@@ -1,0 +1,26 @@
+<ModMetadata>
+  <Name>Save-load temp folder fix</Name>
+  <Author>Christian Jackson-Gruber</Author>
+  <ModID>com.github.subitan.stationeers-savefix</ModID>
+  <Version>0.1.0</Version>
+  <Description>
+Keeps a save loading when the game can't delete the temporary folder it unpacked the save into.
+
+To load a save, Stationeers unpacks it into a fresh folder under the temporary directory, loads the world from there, and then deletes the folder. Under CrossOver (Wine) on macOS that delete can fail after the world has loaded, and the game then treats the whole load as failed: the save won't open.
+
+This mod patches only that one delete. A failure is logged as a warning, the load carries on, and the folder is left in the temporary directory. Nothing else is touched, and where the delete works (on Windows) nothing changes. If a game update moves that code, the mod logs "nothing patched" and does nothing.
+
+[b]Installation[/b]
+This is a StationeersLaunchPad plugin mod.
+See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
+
+Source code: https://github.com/subitan/stationeers-savefix
+  </Description>
+  <Tags>
+    <Tag>BepInEx</Tag>
+    <Tag>StationeersLaunchPad</Tag>
+    <Tag>Fix</Tag>
+    <Tag>macOS</Tag>
+    <Tag>CrossOver</Tag>
+  </Tags>
+</ModMetadata>
