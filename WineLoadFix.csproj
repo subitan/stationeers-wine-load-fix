@@ -4,7 +4,7 @@
     the save was unpacked into is logged and ignored, rather than failing the whole load. Under
     CrossOver (Wine) on macOS that delete can fail after the world has loaded.
 
-    Builds against the game's DLLs: set STATIONEERS_DIR to the game's install directory.
+    It needs only NuGet packages: the one game type it patches is found by name when it runs.
   -->
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
@@ -14,7 +14,6 @@
     <Deterministic>true</Deterministic>
     <EnableDefaultItems>false</EnableDefaultItems>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <StationeersDllDir>$(STATIONEERS_DIR)/rocketstation_Data/Managed</StationeersDllDir>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,10 +24,6 @@
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.4.21" />
     <PackageReference Include="UnityEngine.Modules" Version="2021.2.3" IncludeAssets="compile" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp" HintPath="$(StationeersDllDir)/Assembly-CSharp.dll" Private="false" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -45,9 +40,4 @@
     <Copy SourceFiles="@(AboutFiles)" DestinationFolder="$(DistDir)/WineLoadFix/About/%(RecursiveDir)" />
   </Target>
 
-  <Target Name="CheckGameDlls" BeforeTargets="ResolveAssemblyReferences">
-    <Error
-      Condition="!Exists('$(StationeersDllDir)/Assembly-CSharp.dll')"
-      Text="Stationeers' DLLs weren't found in '$(StationeersDllDir)': set STATIONEERS_DIR to the game's install directory." />
-  </Target>
 </Project>

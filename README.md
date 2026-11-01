@@ -28,7 +28,10 @@ applies, it says "nothing patched" instead and does nothing.
 
 ## Build
 
-    STATIONEERS_DIR=<the game's install directory> dotnet build -c Release
+    dotnet build -c Release
+
+It needs only the .NET SDK and NuGet packages, not the game. CI builds it on every push and pull
+request, and keeps the packaged mod as the run's artifact.
 
 The DLL is `bin/Release/net48/WineLoadFix.dll`. With `-t:Dist`, the mod's layout is also
 put in `dist/WineLoadFix`.

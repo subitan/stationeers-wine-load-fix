@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - name: Build and package the mod
+        run: dotnet build WineLoadFix.csproj -c Release -t:Build,Dist -warnaserror
+      - name: Check the package
+        run: |
+          test -f dist/WineLoadFix/WineLoadFix.dll
+          test -f dist/WineLoadFix/About/About.xml
+          test -f dist/WineLoadFix/About/Preview.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WineLoadFix
+          path: dist/
