@@ -16,7 +16,9 @@ else is touched, and where the delete works (Windows) nothing changes.
 ## Install
 
 It is a [StationeersLaunchPad](https://github.com/StationeersLaunchPad/StationeersLaunchPad)
-plugin mod: with BepInEx and StationeersLaunchPad installed, copy the `WineLoadFix` folder of
+plugin mod. With BepInEx and StationeersLaunchPad installed, subscribe to it on the
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3831385488) and
+enable it in the mod list. Or copy the `WineLoadFix` folder of
 a release (or of `dist/`, below) into StationeersLaunchPad's local mods directory
 (`Documents/My Games/Stationeers/mods`), so it holds `WineLoadFix.dll` and `About/`, and
 enable it in the mod list. Without StationeersLaunchPad, copy just `WineLoadFix.dll` into
