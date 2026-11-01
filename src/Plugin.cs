@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using Assets.Scripts.Serialization;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
@@ -29,8 +28,9 @@ namespace WineLoadFix
         {
             Log = Logger;
             // LoadWorldTask is async, so its code, and the delete, are in its state machine's MoveNext.
-            var stateMachine = typeof(LoadHelper)
-                .GetNestedTypes(BindingFlags.NonPublic | BindingFlags.Public)
+            // LoadHelper is found by name, so the plugin builds without the game's DLLs.
+            var stateMachine = AccessTools.TypeByName("Assets.Scripts.Serialization.LoadHelper")
+                ?.GetNestedTypes(BindingFlags.NonPublic | BindingFlags.Public)
                 .FirstOrDefault(t => t.Name.Contains("LoadWorldTask"));
             var moveNext = stateMachine?.GetMethod(
                 "MoveNext", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
