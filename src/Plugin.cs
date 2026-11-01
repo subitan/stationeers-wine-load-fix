@@ -9,7 +9,7 @@ using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 
-namespace SaveLoadTempFix
+namespace WineLoadFix
 {
     /// <summary>
     /// Loading a save unpacks it into a fresh folder under the system's temporary directory, loads
@@ -18,10 +18,10 @@ namespace SaveLoadTempFix
     /// load as failed. This plugin makes just that one delete, in <c>LoadHelper.LoadWorldTask</c>,
     /// log a failure and carry on, leaving the folder behind.
     /// </summary>
-    [BepInPlugin(Guid, "Save-load temp folder fix", "0.1.0")]
+    [BepInPlugin(Guid, "Wine Save Load Fix", "0.1.0")]
     public class Plugin : BaseUnityPlugin
     {
-        public const string Guid = "com.github.subitan.stationeers-savefix";
+        public const string Guid = "com.github.subitan.stationeers-wine-load-fix";
 
         internal static ManualLogSource Log;
 

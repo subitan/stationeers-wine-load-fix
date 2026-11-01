@@ -1,4 +1,4 @@
-# Save-load temp folder fix (Stationeers)
+# Wine Save Load Fix (Stationeers)
 
 A BepInEx plugin. To load a save, Stationeers unpacks it into a fresh folder under the
 temporary directory, loads the world from there, and then deletes the folder. Under CrossOver
@@ -16,10 +16,10 @@ else is touched, and where the delete works (Windows) nothing changes.
 ## Install
 
 It is a [StationeersLaunchPad](https://github.com/StationeersLaunchPad/StationeersLaunchPad)
-plugin mod: with BepInEx and StationeersLaunchPad installed, copy the `SaveLoadTempFix` folder of
+plugin mod: with BepInEx and StationeersLaunchPad installed, copy the `WineLoadFix` folder of
 a release (or of `dist/`, below) into StationeersLaunchPad's local mods directory
-(`Documents/My Games/Stationeers/mods`), so it holds `SaveLoadTempFix.dll` and `About/`, and
-enable it in the mod list. Without StationeersLaunchPad, copy just `SaveLoadTempFix.dll` into
+(`Documents/My Games/Stationeers/mods`), so it holds `WineLoadFix.dll` and `About/`, and
+enable it in the mod list. Without StationeersLaunchPad, copy just `WineLoadFix.dll` into
 `BepInEx/plugins/`.
 
 On start, BepInEx's log (`BepInEx/LogOutput.log`) says "A failure to delete a loaded save's
@@ -30,8 +30,8 @@ applies, it says "nothing patched" instead and does nothing.
 
     STATIONEERS_DIR=<the game's install directory> dotnet build -c Release
 
-The DLL is `bin/Release/net48/SaveLoadTempFix.dll`. With `-t:Dist`, the mod's layout is also
-put in `dist/SaveLoadTempFix`.
+The DLL is `bin/Release/net48/WineLoadFix.dll`. With `-t:Dist`, the mod's layout is also
+put in `dist/WineLoadFix`.
 
 `About/Preview.png` and `About/thumb.png` are rendered at 1232×706 from `art/preview.svg`, an
 original drawing, with any browser.

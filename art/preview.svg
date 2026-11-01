@@ -14,6 +14,6 @@
     <circle cx="150" cy="120" r="92" fill="#2f9e5b" stroke="#0e141b" stroke-width="12"/>
     <path d="M100 122 l34 34 l70 -76" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <text x="616" y="600" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Save-load temp folder fix</text>
+  <text x="616" y="600" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Wine Save Load Fix</text>
   <text x="616" y="660" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="34" fill="#9fb3c8">Saves keep loading under CrossOver</text>
 </svg>

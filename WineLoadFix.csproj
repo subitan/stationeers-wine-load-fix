@@ -8,8 +8,8 @@
   -->
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <AssemblyName>SaveLoadTempFix</AssemblyName>
-    <RootNamespace>SaveLoadTempFix</RootNamespace>
+    <AssemblyName>WineLoadFix</AssemblyName>
+    <RootNamespace>WineLoadFix</RootNamespace>
     <LangVersion>latest</LangVersion>
     <Deterministic>true</Deterministic>
     <EnableDefaultItems>false</EnableDefaultItems>
@@ -35,14 +35,14 @@
     <DistDir>$(MSBuildProjectDirectory)/dist</DistDir>
   </PropertyGroup>
 
-  <!-- The mod's layout, dist/SaveLoadTempFix/{SaveLoadTempFix.dll, About/}: a StationeersLaunchPad mod. -->
+  <!-- The mod's layout, dist/WineLoadFix/{WineLoadFix.dll, About/}: a StationeersLaunchPad mod. -->
   <Target Name="Dist" DependsOnTargets="Build">
     <ItemGroup>
       <AboutFiles Include="About/**/*" />
     </ItemGroup>
-    <RemoveDir Directories="$(DistDir)/SaveLoadTempFix" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DistDir)/SaveLoadTempFix" />
-    <Copy SourceFiles="@(AboutFiles)" DestinationFolder="$(DistDir)/SaveLoadTempFix/About/%(RecursiveDir)" />
+    <RemoveDir Directories="$(DistDir)/WineLoadFix" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DistDir)/WineLoadFix" />
+    <Copy SourceFiles="@(AboutFiles)" DestinationFolder="$(DistDir)/WineLoadFix/About/%(RecursiveDir)" />
   </Target>
 
   <Target Name="CheckGameDlls" BeforeTargets="ResolveAssemblyReferences">

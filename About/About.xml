@@ -1,7 +1,7 @@
 <ModMetadata>
-  <Name>Save-load temp folder fix</Name>
+  <Name>Wine Save Load Fix</Name>
   <Author>Christian Jackson-Gruber</Author>
-  <ModID>com.github.subitan.stationeers-savefix</ModID>
+  <ModID>com.github.subitan.stationeers-wine-load-fix</ModID>
   <Version>0.1.0</Version>
   <Description>
 Keeps a save loading when the game can't delete the temporary folder it unpacked the save into.
@@ -14,7 +14,7 @@ This mod patches only that one delete. A failure is logged as a warning, the loa
 This is a StationeersLaunchPad plugin mod.
 See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
 
-Source code: https://github.com/subitan/stationeers-savefix
+Source code: https://github.com/subitan/stationeers-wine-load-fix
   </Description>
   <Tags>
     <Tag>BepInEx</Tag>
